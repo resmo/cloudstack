@@ -148,3 +148,4 @@ INSERT IGNORE INTO `cloud`.`configuration` VALUES ('Domain Defaults', 'DEFAULT',
 INSERT IGNORE INTO `cloud`.`configuration` VALUES ('Domain Defaults', 'DEFAULT', 'management-server', 'max.domain.primary.storage', '-1', 'The default maximum primary storage space (in GiB) that can be used for a domain', '-1', NULL, NULL, 0);
 INSERT IGNORE INTO `cloud`.`configuration` VALUES ('Domain Defaults', 'DEFAULT', 'management-server', 'max.domain.secondary.storage', '-1', 'The default maximum secondary storage space (in GiB) that can be used for a domain', '-1', NULL, NULL, 0);
 
+INSERT IGNORE INTO `cloud`.`configuration` VALUES ("Advanced", 'DEFAULT', 'management-server', "usage.report.interval", 7, "Interval (days) between sending anonymous Usage Reports back to the CloudStack project", "", NULL, NULL, 0);
