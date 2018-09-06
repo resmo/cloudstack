@@ -73,13 +73,15 @@ public class RemoteHostEndPoint implements EndPoint {
 
     private void configure(Host host) {
         hostId = host.getId();
-        hostAddress = host.getPrivateIpAddress();
-        publicAddress = host.getPublicIpAddress();
-        if (Host.Type.SecondaryStorageVM == host.getType()) {
-            String vmName = host.getName();
-            SecondaryStorageVmVO ssvm = vmDao.findByInstanceName(vmName);
-            if (ssvm != null) {
-                publicAddress = ssvm.getPublicIpAddress();
+        if (hostId != null) {
+            hostAddress = host.getPrivateIpAddress();
+            publicAddress = host.getPublicIpAddress();
+            if (Host.Type.SecondaryStorageVM == host.getType()) {
+                String vmName = host.getName();
+                SecondaryStorageVmVO ssvm = vmDao.findByInstanceName(vmName);
+                if (ssvm != null) {
+                    publicAddress = ssvm.getPublicIpAddress();
+                }
             }
         }
     }
